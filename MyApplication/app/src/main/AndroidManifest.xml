@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.laznrbfe.myapplication">
-
+    <uses-sdk android:minSdkVersion="11"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- 主main／home Activity (没有上级Activity) -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -18,11 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 主活动的一个子活动 -->
         <activity
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_display_message"
             android:parentActivityName=".MainActivity"
             >
+            <!-- meta-data 用于支持 support 4.0 以及以下系统,指明上级Activity -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.laznrbfe.myapplication.MainActivity"
